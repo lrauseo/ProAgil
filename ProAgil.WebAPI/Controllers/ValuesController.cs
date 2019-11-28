@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProAgil.WebAPI.Data;
-using ProAgil.WebAPI.Model;
+using ProAgil.Repository.Data;
 
 namespace ProAgil.WebAPI.Controllers
 {
@@ -14,11 +13,11 @@ namespace ProAgil.WebAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        public DataContext _contexto { get; }
-        public ValuesController(DataContext contexto)
+        public ProAgilContext _contexto { get; }
+        public ValuesController(ProAgilContext contexto)
         {
             this._contexto = contexto;
-        }        
+        }
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -29,7 +28,7 @@ namespace ProAgil.WebAPI.Controllers
                 return Ok(results);
             }
             catch (System.Exception e)
-            {                
+            {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
         }
@@ -40,13 +39,13 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                var results =  await _contexto.Eventos.FirstOrDefaultAsync(a => a.EventoId == id);
+                var results = await _contexto.Eventos.FirstOrDefaultAsync(a => a.Id == id);
                 return Ok(results);
             }
             catch (System.Exception e)
-            {                
+            {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }            
+            }
         }
 
         // POST api/values

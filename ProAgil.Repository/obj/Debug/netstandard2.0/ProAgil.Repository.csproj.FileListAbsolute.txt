@@ -1,0 +1,11 @@
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/bin/Debug/netstandard2.0/ProAgil.Repository.deps.json
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/bin/Debug/netstandard2.0/ProAgil.Repository.dll
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/bin/Debug/netstandard2.0/ProAgil.Repository.pdb
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/bin/Debug/netstandard2.0/ProAgil.Domain.dll
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/bin/Debug/netstandard2.0/ProAgil.Domain.pdb
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.csprojAssemblyReference.cache
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.AssemblyInfoInputs.cache
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.AssemblyInfo.cs
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.csproj.CopyComplete
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.dll
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/Debug/netstandard2.0/ProAgil.Repository.pdb

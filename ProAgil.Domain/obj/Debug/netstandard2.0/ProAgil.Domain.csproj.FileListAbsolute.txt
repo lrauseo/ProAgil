@@ -1,0 +1,8 @@
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/bin/Debug/netstandard2.0/ProAgil.Domain.deps.json
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/bin/Debug/netstandard2.0/ProAgil.Domain.dll
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/bin/Debug/netstandard2.0/ProAgil.Domain.pdb
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/Debug/netstandard2.0/ProAgil.Domain.csprojAssemblyReference.cache
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/Debug/netstandard2.0/ProAgil.Domain.AssemblyInfoInputs.cache
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/Debug/netstandard2.0/ProAgil.Domain.AssemblyInfo.cs
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/Debug/netstandard2.0/ProAgil.Domain.dll
+/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/Debug/netstandard2.0/ProAgil.Domain.pdb

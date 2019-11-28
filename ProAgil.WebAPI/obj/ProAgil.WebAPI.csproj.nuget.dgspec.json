@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.WebAPI/ProAgil.WebAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/ProAgil.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/ProAgil.Domain.csproj",
+        "projectName": "ProAgil.Domain",
+        "projectPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/ProAgil.Domain.csproj",
+        "packagesPath": "/Users/leandro.rauseo/.nuget/packages/",
+        "outputPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/leandro.rauseo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/ProAgil.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/ProAgil.Repository.csproj",
+        "projectName": "ProAgil.Repository",
+        "projectPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/ProAgil.Repository.csproj",
+        "packagesPath": "/Users/leandro.rauseo/.nuget/packages/",
+        "outputPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/leandro.rauseo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/ProAgil.Domain.csproj": {
+                "projectPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Domain/ProAgil.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.WebAPI/ProAgil.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.WebAPI/ProAgil.WebAPI.csproj",
+        "projectName": "ProAgil.WebAPI",
+        "projectPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.WebAPI/ProAgil.WebAPI.csproj",
+        "packagesPath": "/Users/leandro.rauseo/.nuget/packages/",
+        "outputPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.WebAPI/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/leandro.rauseo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/ProAgil.Repository.csproj": {
+                "projectPath": "/Users/leandro.rauseo/Projects/Udemy/DotNetCore/ProAgil.Repository/ProAgil.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
