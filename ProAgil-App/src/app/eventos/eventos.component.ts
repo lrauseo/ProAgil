@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
 import { stringify } from 'querystring';
 import { IEvento } from '../_modules/IEvento';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 
 
@@ -18,16 +19,24 @@ export class EventosComponent implements OnInit {
   imagemLargura = 50;
   imagemMargem = 2;
   mostrarImagem = false;
+  modalRef: BsModalRef;
+
   _filtroLista: string;
-  get filtroLista(): string {
+
+  constructor(private eventoService: EventoService
+    , private modalService: BsModalService
+  ) { }
+  
+ get filtroLista(): string {
     return this._filtroLista;
   }
   set filtroLista(value: string) {
     this._filtroLista = value;
-    this.eventosFiltrados = this._filtroLista  ? this.filtrarEventos(this.filtroLista) : this.eventos;
+    this.eventosFiltrados = this._filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
   }
-
-  constructor(private eventoService: EventoService) { }
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 
   ngOnInit() {
     this.getEventos();
@@ -40,18 +49,18 @@ export class EventosComponent implements OnInit {
     filtrarPor = filtrarPor.toLocaleLowerCase();
     return this.eventos.filter(
       evento => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
-                evento.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+        evento.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
     );
   }
 
 
   getEventos() {
     this.eventoService.getAllEventos().subscribe(
-      (_eventos: IEvento[]) =>{
-        this.eventos = _eventos; 
+      (_eventos: IEvento[]) => {
+        this.eventos = _eventos;
         this.eventosFiltrados = this.eventos;
         console.log(_eventos);
       },
-        error => { console.log(error); });
+      error => { console.log(error); });
   }
 }

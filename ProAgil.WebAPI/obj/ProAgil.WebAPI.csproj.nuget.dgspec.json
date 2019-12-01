@@ -112,6 +112,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [
