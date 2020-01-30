@@ -29,7 +29,7 @@ namespace ProAgil.WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ProAgilContext context)
         {
             if (env.IsDevelopment())
             {
@@ -41,6 +41,7 @@ namespace ProAgil.WebAPI
             }
 
             // app.UseHttpsRedirection();
+            context.Database.Migrate();
             app.UseStaticFiles();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();

@@ -67,7 +67,7 @@ namespace ProAgil.WebAPI.Controllers
         {
             try
             {
-                this.Repo.Add(model);
+                this.Repo.Add<Evento>(model);
                 if (await this.Repo.SaveChengesAsync())
                     return Created($"api/eventos/{model.Id}", model);
             }
@@ -78,7 +78,7 @@ namespace ProAgil.WebAPI.Controllers
             }
             return BadRequest();
         }
-        [HttpPut]
+        [HttpPut("{EventoId}")]
         public async Task<IActionResult> Put(int eventoId, Evento model)
         {
             try
@@ -86,7 +86,7 @@ namespace ProAgil.WebAPI.Controllers
                 var evento = await this.Repo.GetAllEventoAsyncById(eventoId, false);
                 if (evento == null) return NotFound();
 
-                this.Repo.Update(model);
+                this.Repo.Update<Evento>(model);
 
                 if (await this.Repo.SaveChengesAsync())
                     return Created($"api/eventos/{model.Id}", model);
@@ -99,7 +99,7 @@ namespace ProAgil.WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpDelete]
+        [HttpDelete("{EventoId}")]
         public async Task<IActionResult> Delete(int eventoId)
         {
             try

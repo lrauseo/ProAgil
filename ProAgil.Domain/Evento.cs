@@ -10,6 +10,7 @@ namespace ProAgil.Domain
         public string Tema { get; set; }
         public int QtdPessoas { get; set; }
         public string Email { get; set; }
+        public string Telefone { get; set; }
         public ICollection<Lote> Lotes { get; set; }   
         public ICollection<RedeSocial> RedesSociais { get; set; }
         public string ImagemUrl { get; set; }

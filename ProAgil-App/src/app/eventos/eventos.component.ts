@@ -1,10 +1,9 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
-import { stringify } from 'querystring';
 import { IEvento } from '../_modules/IEvento';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap';
-
-
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { defineLocale, BsLocaleService, ptBrLocale } from 'ngx-bootstrap';
+defineLocale('pt-br', ptBrLocale);
 
 @Component({
   selector: 'app-eventos',
@@ -15,34 +14,99 @@ export class EventosComponent implements OnInit {
 
 
   eventosFiltrados: IEvento[];
+  evento: IEvento;
   eventos: IEvento[];
   imagemLargura = 50;
   imagemMargem = 2;
   mostrarImagem = false;
-  modalRef: BsModalRef;
-
+  modoSalvar = 'Post';
+  registerForm: FormGroup;
   _filtroLista: string;
+  bodyDeletarEvento :string;
 
   constructor(private eventoService: EventoService
-    , private modalService: BsModalService
-  ) { }
-  
- get filtroLista(): string {
+    , private fb: FormBuilder
+    , private localeService: BsLocaleService
+  ) {
+    this.localeService.use('pt-br');
+  }
+
+  get filtroLista(): string {
     return this._filtroLista;
   }
   set filtroLista(value: string) {
     this._filtroLista = value;
     this.eventosFiltrados = this._filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
   }
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openModal(template: any) {
+    this.registerForm.reset();
+    template.show();
+
+  }
+
+
+  novoEvento(template: any) {
+    this.modoSalvar = 'Post';
+    this.openModal(template);
+  }
+
+
+  editarEvento(evento: IEvento, template: any) {
+    this.modoSalvar = 'Put';
+    this.openModal(template);
+    this.evento = evento;
+    this.registerForm.patchValue(this.evento);
   }
 
   ngOnInit() {
     this.getEventos();
+    this.validation();
   }
   alternarImagem() {
     this.mostrarImagem = !this.mostrarImagem;
+  }
+  salvarAlteracao(template: any) {
+
+    if (this.registerForm.valid) {
+      if (this.modoSalvar == 'Put') {
+        this.evento = Object.assign({ id: this.evento.id }, this.registerForm.value)
+        this.eventoService.putEvento(this.evento.id, this.evento).subscribe(
+          () => {
+            template.hide();
+            this.getEventos();
+          }, error => {
+            console.log(error);
+          });
+      } else {
+        this.evento = Object.assign({}, this.registerForm.value)
+        this.eventoService.postEvento(this.evento).subscribe(
+          (novoEvento: IEvento) => {
+            console.log(novoEvento);            
+            template.hide();
+            this.getEventos();
+          }, error => {
+            console.log(error);
+          });
+      }
+
+    }
+  }
+
+
+
+  validation() {
+    this.registerForm = this.fb.group({
+      tema: ['',
+        [Validators.required, Validators.minLength(4)
+          , Validators.maxLength(50)]],
+      local: ['', Validators.required],
+      dataEvento: ['', Validators.required],
+      qtdPessoas: [''
+        , [Validators.required, Validators.max(120000)]],
+      imagemUrl: ['', Validators.required],
+      telefone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
+    });
   }
 
   filtrarEventos(filtrarPor: string): IEvento[] {
@@ -63,4 +127,21 @@ export class EventosComponent implements OnInit {
       },
       error => { console.log(error); });
   }
+
+  excluirEvento(evento: IEvento, template: any) {
+	this.openModal(template);
+	this.evento = evento;
+	this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${evento.tema}, Código: ${evento.id}`;
+}
+
+confirmeDelete(template: any) {
+	this.eventoService.deleteEvento(this.evento.id).subscribe(
+		() => {
+	    	template.hide();
+	    	this.getEventos();
+	  	}, error => {
+	    	console.log(error);
+	  	}
+	);
+}
 }
